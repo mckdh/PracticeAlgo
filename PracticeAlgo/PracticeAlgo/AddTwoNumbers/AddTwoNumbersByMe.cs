@@ -1,24 +1,9 @@
-﻿using System.Globalization;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using PracticeAlgo.AddTwoNumbers;
-using LanguageExt;
-using static LanguageExt.Prelude;
 
 namespace PracticeAlgo
 {
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     public class AddTwoNumbersByMe : AddTwoNumbersInterface
     {
         public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
@@ -36,6 +21,8 @@ namespace PracticeAlgo
             ToOneNumber(listForll1, listForll2, out l1String, out l2String);
             // Console.WriteLine("l1String [" + l1String + "]");
             // Console.WriteLine("l2String [" + l2String + "]");
+            //here
+            l1String = "1000000000000000000000000000001";
 
             //Add
             double resultInt = Double.Parse(l1String) + Double.Parse(l2String);

@@ -8,7 +8,7 @@ namespace PracticeAlgo.Tests
         //=================== TestInitialize =====================
         private AddTwoNumbersInterface CreateTargetClass()
         {
-            return new AddTwoNumbersByMe();
+            return new AddTwoNumbersByOfficial();
         }
 
         //=================== Main =====================
@@ -20,11 +20,13 @@ namespace PracticeAlgo.Tests
             Explanation: 342 + 465 = 807.
             Output: 7 -> 0 -> 8
 
-            1. 메소드 쪼개기
-            2. 테스트를 세부적으로 하기
-            */
+            Input: l1 = [0], l2 = [0]
+            Output: [0]
 
-            /* Input
+            Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+            Output:     [8,9,9,9,0,0,0,1]
+
+            Input
             [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
             [5,6,4]
             Output
@@ -34,9 +36,37 @@ namespace PracticeAlgo.Tests
 
             각 노드 하나씩만 더한다.
             올림이 발생하면 다음 자리로 옮긴다.
+
+            1. 거꾸로 변환해서 더한다.
+            2. 결과를 다시 거꾸로 바꾼다.
              */
             AddTwoNumbersInterface targetClass = CreateTargetClass();
 
+            //Test Case #3
+            ListNode l14_3 = new ListNode(1);
+            ListNode l13_3 = new ListNode(0, l14_3);
+            ListNode l12_3 = new ListNode(0, l13_3);
+            ListNode l11_3 = new ListNode(0, l12_3);
+            ListNode l10_3 = new ListNode(0, l11_3);
+            ListNode l09_3 = new ListNode(1, l10_3);
+
+            ListNode l21_3 = new ListNode(4);
+            ListNode l21_2 = new ListNode(6, l21_3);
+            ListNode l21_1 = new ListNode(5, l21_2);
+
+            ListNode resultNode_3 = targetClass.AddTwoNumbers(l09_3, l21_1);
+
+            //100466
+            ListNode compare1 = new ListNode(1);
+            ListNode compare2 = new ListNode(0, compare1);
+            ListNode compare3 = new ListNode(0, compare2);
+            ListNode compare4 = new ListNode(4, compare3);
+            ListNode compare5 = new ListNode(6, compare4);
+            ListNode compare6 = new ListNode(6, compare5);
+
+            Assert.Equal(compare6.val, resultNode_3.val);
+
+/*
             //Test Case #1
             ListNode l13 = new ListNode(3);
             ListNode l12 = new ListNode(4, l13);
@@ -69,22 +99,8 @@ namespace PracticeAlgo.Tests
 
             Assert.Equal(resultSample_2.next.val, resultNode_2.next.val);
             Assert.Equal(resultSample_2.val, resultNode_2.val);
+            */
 
-            //Test Case #3
-            /*             ListNode l14_3 = new ListNode(9);
-                        ListNode l13_3 = new ListNode(9, l14_3);
-                        ListNode l12_3 = new ListNode(9, l13_3);
-                        ListNode l11_3 = new ListNode(9, l12_3);
-
-                        ListNode l21_3 = new ListNode(1);
-
-                        ListNode resultNode_3 = targetClass.AddTwoNumbers(l11_3, l21_3);
-
-                        ListNode result2_3 = new ListNode(8);
-                        ListNode resultSample_3 = new ListNode(1, result2_3);
-
-                        Assert.Equal(resultSample_3.next.val, resultNode_3.next.val);
-                        Assert.Equal(resultSample_3.val, resultNode_3.val); */
         }
     }
 }
