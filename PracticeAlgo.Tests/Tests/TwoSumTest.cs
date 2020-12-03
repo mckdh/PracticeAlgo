@@ -6,7 +6,7 @@ namespace PracticeAlgo.Tests
     public class TwoSumTest
     {
         //=================== TestInitialize =====================
-        private TwoSumInterface CreateTwoSumClass()
+        private ITwoSum CreateTwoSumClass()
         {
             return new TwoSumByOnePassHashTable();
         }
@@ -15,7 +15,7 @@ namespace PracticeAlgo.Tests
         [Fact]
         public void TwoSumTest_main()
         {
-            TwoSumInterface twoSumClass = CreateTwoSumClass();
+            ITwoSum twoSumClass = CreateTwoSumClass();
 
             int[] givenNumbs = new int[] { 2, 7, 11, 15 };
             int target = 9;

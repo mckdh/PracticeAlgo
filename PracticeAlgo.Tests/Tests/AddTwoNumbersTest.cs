@@ -6,7 +6,7 @@ namespace PracticeAlgo.Tests
     public class AddTwoNumbersTest
     {
         //=================== TestInitialize =====================
-        private AddTwoNumbersInterface CreateTargetClass()
+        private IAddTwoNumbers CreateTargetClass()
         {
             return new AddTwoNumbersByOfficial();
         }
@@ -40,7 +40,7 @@ namespace PracticeAlgo.Tests
             1. 거꾸로 변환해서 더한다.
             2. 결과를 다시 거꾸로 바꾼다.
              */
-            AddTwoNumbersInterface targetClass = CreateTargetClass();
+            IAddTwoNumbers targetClass = CreateTargetClass();
 
             //Test Case #3
             ListNode l14_3 = new ListNode(1);
