@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace PracticeAlgo
 {
-    public class TwoSumByOnePassHashTable: TwoSum
+    public class TwoSumByOnePassHashTable: ITwoSum
     {
         public int[] TwoSum(int[] nums, int target)
         {
